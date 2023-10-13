@@ -8,7 +8,7 @@ export const HomePage = () => {
     <div className={styles.homePageContainer}>
       <HeaderMenu />
       <Section>
-        <p>aaaaaa</p>
+        
       </Section>
     </div>
   );
