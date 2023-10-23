@@ -31,7 +31,7 @@ export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
   // Y axis
   const yScale = useMemo(() => {
     return d3.scaleLinear().domain([-100, 100]).range([boundsHeight, 0]);
-  }, [data, height]);
+  }, [boundsHeight]);
 
   // X axis
   const [xMin, xMax] = d3.extent(data, (d) => d.year);
@@ -40,7 +40,7 @@ export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
       .scaleLinear()
       .domain([xMin || 0, xMax || 0])
       .range([0, boundsWidth]);
-  }, [data, width]);
+  }, [boundsWidth, xMax, xMin]);
 
   // Color
   const colorScale = d3

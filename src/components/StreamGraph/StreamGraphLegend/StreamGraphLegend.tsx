@@ -1,6 +1,11 @@
 import styles from "./StreamGraphLegend.module.scss";
 
-export function StreamGraphLegend({ colorScale, groups }) {
+interface StreamGraphLegendProps {
+  colorScale: (group: string) => string;
+  groups: string[];
+}
+
+export function StreamGraphLegend({ colorScale, groups }: StreamGraphLegendProps) {
   const circleRadius = 10;
   const circleSpacing = 10;
 
