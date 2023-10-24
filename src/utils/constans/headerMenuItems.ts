@@ -9,5 +9,5 @@ export const headerMenuItems = [
     {title: "Home", to: HOME_PAGE_PATH},
     {title: "About", to: ABOUT_PAGE_PATH},
     {title: "Blog", to: BLOG_PAGE_PATH},
-    {title: "App", to: APP_PAGE_PATH}
+    {title: "Apps", to: APP_PAGE_PATH}
 ]

@@ -19,14 +19,29 @@
 }
 
 .headerMenuLink {
+  display: inline-block;
   position: relative;
+  color: #6f777d;
+  cursor: pointer;
+  padding-bottom: 3px;
+  font-size: 0.8em;
 }
 
-.headerMenuLink p {
-  border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s ease-in-out;
+.headerMenuLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3d4144;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
-.headerMenuLink:hover p {
-  border-bottom: 2px solid #555a64;
+.headerMenuLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
+

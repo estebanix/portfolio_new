@@ -18,7 +18,7 @@ export const Footer = () => {
         <a href="https://twitter.com/SamuelKertes">
           <li className="nav-li">
             <FontAwesomeIcon
-              style={{ color: "#14171A" }}
+              style={{ color: "#1DA1F2" }}
               icon={faSquareXTwitter}
             />{" "}
             TWITTER

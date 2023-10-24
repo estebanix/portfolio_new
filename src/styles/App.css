@@ -19,3 +19,7 @@ svg {
 ul {
   list-style: none;
 }
+
+span {
+  font-weight: 700;
+}
