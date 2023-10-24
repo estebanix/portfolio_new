@@ -1,16 +1,31 @@
+import { BlogPostCard } from "../BlogPostCard";
+
 interface dataProps {
-    title: string;
-  }
-  
-  interface RenderBoxProps {
-    data?: dataProps[];
-  }
-  
-  export const RenderBox: React.FC<RenderBoxProps> = ({ data }) => {
-    return (
-      <>
-        {data && data.map(dat => <p key={dat.title}>{dat.title}</p>)}
-      </>
-    );
-  }
-  
+  title: string;
+  date: string;
+  content: string;
+}
+
+interface RenderBoxProps {
+  data?: dataProps[];
+  limit: number;
+}
+
+export const RenderBox: React.FC<RenderBoxProps> = ({ data, limit }) => {
+  const limitedData = data ? data.slice(0, limit) : [];
+  return (
+    <>
+      {limitedData!.map((dat, index) => {
+        // Notice the ! here
+        return (
+          <BlogPostCard
+            key={index}
+            title={dat.title}
+            date={dat.date}
+            content={dat.content}
+          />
+        );
+      })}
+    </>
+  );
+};

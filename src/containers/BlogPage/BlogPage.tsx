@@ -15,7 +15,7 @@ export const BlogPage = () => {
       <Section>
         <Article>
           <h2>Blog</h2>
-          <RenderBox data={blogData} />
+          <RenderBox limit={4} data={blogData} />
         </Article>
       </Section>
       <Footer />
