@@ -2,8 +2,10 @@ import { HeaderMenu } from "../../components/HeaderMenu";
 import { Section } from "../../components/Section";
 import { Article } from "../../components/Article";
 import { Footer } from "../../components/Footer";
+import { CircularBarplot } from "../../components/CircularBarPlot/CircularBarPlot";
 
 import styles from "./AboutPage.module.scss";
+import { data } from "./../../components/CircularBarPlot/data";
 
 export const AboutPage = () => {
   return (
@@ -36,6 +38,7 @@ export const AboutPage = () => {
             my work, and always remember to <span>"stay curious!"</span>
           </p>
         </Article>
+        <CircularBarplot width={400} height={400} data={data} />
       </Section>
       <Footer />
     </div>
