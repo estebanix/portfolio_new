@@ -1,7 +1,7 @@
 import { HeaderMenu } from "../../components/HeaderMenu";
 import { Section } from "../../components/Section";
 import { StreamGraph } from "../../components/StreamGraph/StreamGraph";
-import { data } from "./../../components/StreamGraph/data";
+import { data } from "../../data/mainPlotData";
 import { TextBar } from "../../components/TitleBar";
 import { Footer } from "../../components/Footer";
 import { Article } from "../../components/Article";
@@ -25,7 +25,7 @@ export const HomePage = () => {
         <Article>
           <h2>Recent Posts</h2>
           <RenderBox limit={2} data={blogData} />
-          <Button text="Show more" />
+          <Button text="Show more" to="blog" />
         </Article>
       </Section>
       <Footer />

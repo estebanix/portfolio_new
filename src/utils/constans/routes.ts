@@ -1,5 +1,5 @@
 export const HOME_PAGE_PATH = "/";
-export const APP_PAGE_PATH = "/app"
+export const APPS_PAGE_PATH = "/apps"
 
 export const ABOUT_PAGE_PATH = "/about";
 export const BLOG_PAGE_PATH = "/blog";
