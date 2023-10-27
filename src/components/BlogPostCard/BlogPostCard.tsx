@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "react-router-dom";
 
 import styles from "./BlogPostCard.module.scss";
 import img from "./../../../public/images/blogpic.png";
@@ -17,7 +18,9 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({
 }) => {
   return (
     <div className={styles.blogPostCardContainer}>
-      <h2>{title}</h2>
+      <Link to={`/blog/${title}`}>
+        <h2>{title}</h2>
+      </Link>
       <p>
         <FontAwesomeIcon icon={faClock} /> {date}
       </p>

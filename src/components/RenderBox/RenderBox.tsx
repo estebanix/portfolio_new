@@ -16,7 +16,6 @@ export const RenderBox: React.FC<RenderBoxProps> = ({ data, limit }) => {
   return (
     <>
       {limitedData!.map((dat, index) => {
-        // Notice the ! here
         return (
           <BlogPostCard
             key={index}
