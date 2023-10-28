@@ -22,7 +22,7 @@ export const HomePage = () => {
         ) : (
           <pre>Loading...</pre>
         )}
-        <Article>
+        <Article bigger={true}>
           <h2>Recent Posts</h2>
           <RenderBox limit={2} data={blogData} />
           <Button text="Show more" to="blog" />

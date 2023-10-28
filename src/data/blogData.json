@@ -3,18 +3,18 @@
     "title": "Getting Started with React",
     "author": "John Doe",
     "date": "2023-10-25",
-    "content": "In this blog post, we will explore the basics of React and how to get started with building web applications using this popular JavaScript library."
+    "content": "In this blog post, we will explore the basics of React and how to get started with building web applications using this popular JavaScript library. ![React Logo](./../../../public/images/blogpic.png)"
   },
   {
     "title": "The Power of Data Visualization with D3",
     "author": "Jane Smith",
     "date": "2023-10-26",
-    "content": "Data visualization is a crucial part of modern web applications. This post delves into the power of D3.js for creating stunning and interactive data visualizations."
+    "content": "Data visualization is a crucial part of modern web applications. This post delves into the power of D3.js for creating stunning and interactive data visualizations. ![D3 Logo](https://example.com/d3-logo.jpg)"
   },
   {
     "title": "Mastering CSS Grid Layout",
     "author": "Mike Johnson",
     "date": "2023-10-27",
-    "content": "CSS Grid Layout is a versatile tool for creating complex web layouts. Learn how to master it and create responsive and flexible designs."
+    "content": "CSS Grid Layout is a versatile tool for creating complex web layouts. Learn how to master it and create responsive and flexible designs. ![CSS Grid Logo](https://example.com/css-grid-logo.jpg)"
   }
 ]

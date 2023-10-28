@@ -5,6 +5,8 @@ import { HeaderMenu } from "../../components/HeaderMenu";
 import styles from "./CurrentPostPage.module.scss";
 import { Footer } from "../../components/Footer";
 import { Section } from "../../components/Section";
+import { Article } from "../../components/Article";
+import Markdown from "react-markdown";
 
 export const CurrentPostPage = () => {
   const { name } = useParams();
@@ -20,7 +22,12 @@ export const CurrentPostPage = () => {
     <div className={styles.currentPostPageContainer}>
       <HeaderMenu />
       <Section>
-        <p>{post.content}</p>
+        <Article>
+          <h2>{post.title}</h2>
+          <Markdown>
+            {post.content}
+          </Markdown>
+        </Article>
       </Section>
       <Footer />
     </div>
