@@ -2,11 +2,15 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../../context/Context";
 import { HeaderMenu } from "../../components/HeaderMenu";
-import styles from "./CurrentPostPage.module.scss";
 import { Footer } from "../../components/Footer";
 import { Section } from "../../components/Section";
 import { Article } from "../../components/Article";
 import Markdown from "react-markdown";
+import { BoxRow } from "../../components/BoxRow";
+import { Button } from "../../components/Button";
+
+import { faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
+import styles from "./CurrentPostPage.module.scss";
 
 export const CurrentPostPage = () => {
   const { name } = useParams();
@@ -18,15 +22,32 @@ export const CurrentPostPage = () => {
     return <p>Blog post not found.</p>;
   }
 
+  const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
+    window.location.href
+  )}&text=${encodeURIComponent(post.title)}`;
+  const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
+    window.location.href
+  )}`;
+
   return (
     <div className={styles.currentPostPageContainer}>
       <HeaderMenu />
       <Section>
         <Article>
           <h2>{post.title}</h2>
-          <Markdown>
-            {post.content}
-          </Markdown>
+          <Markdown>{post.content}</Markdown>
+          <BoxRow gapWidth={20}>
+            <Button
+              text="Twitter"
+              icon={faXTwitter}
+              shareUrl={twitterShareUrl}
+            />
+            <Button
+              text="Linkedin"
+              icon={faLinkedin}
+              shareUrl={linkedinShareUrl}
+            />
+          </BoxRow>
         </Article>
       </Section>
       <Footer />
