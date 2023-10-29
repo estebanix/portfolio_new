@@ -3,18 +3,21 @@
     "title": "Getting Started with React",
     "author": "John Doe",
     "date": "2023-10-25",
-    "content": "In this blog post, we will explore the basics of React and how to get started with building web applications using this popular JavaScript library. ![React Logo](./../../../public/images/blogpic.png)"
+    "content": "In this blog post, we will explore the basics of React and how to get started with building web applications using this popular JavaScript library.\n\nReact is a powerful library for building user interfaces. It allows you to compose complex UIs from small and isolated pieces of code called components. We'll dive into the core concepts of React, from components and state to JSX and props. By the end of this post, you'll have a good understanding of how React works and be ready to start creating your own applications.\n\n![React Logo](./../../../public/images/react-one.png)\n\nAdditionally, we'll discuss common patterns and best practices in React development, explore state management solutions like Redux, and look at how to handle data and perform side effects using hooks. The aim is to equip you with the necessary knowledge to build robust and efficient web applications using React.",
+    "img": "./../../../public/images/react-one.png"
+  },
+  {
+    "title": "Visualization of Stable Isotopes of Nitrogen",
+    "author": "Mike Johnson",
+    "date": "2023-10-27",
+    "content": "Stable isotopes of nitrogen are an essential part of ecological and environmental studies. Understanding the distribution and dynamics of nitrogen isotopes in various ecosystems provides valuable insights into nutrient cycling and food web interactions.\n\nThis blog post will explore the visualization techniques used to study stable isotopes of nitrogen. We'll discuss isotope ratio mass spectrometry (IRMS) and the analysis of δ15N values, which reveal information about nitrogen sources and transformations.\n\n![React Logo](./../../../public/images/KUT_N15.png)\n\nAdditionally, we'll delve into case studies that showcase the application of nitrogen isotope visualization in ecological research. By the end of this post, you'll have a deeper understanding of the significance of stable isotopes of nitrogen in environmental science.",
+    "img": "./../../../public/images/KUT_N15.png"
   },
   {
     "title": "The Power of Data Visualization with D3",
     "author": "Jane Smith",
     "date": "2023-10-26",
-    "content": "Data visualization is a crucial part of modern web applications. This post delves into the power of D3.js for creating stunning and interactive data visualizations. ![D3 Logo](https://example.com/d3-logo.jpg)"
-  },
-  {
-    "title": "Mastering CSS Grid Layout",
-    "author": "Mike Johnson",
-    "date": "2023-10-27",
-    "content": "CSS Grid Layout is a versatile tool for creating complex web layouts. Learn how to master it and create responsive and flexible designs. ![CSS Grid Logo](https://example.com/css-grid-logo.jpg)"
+    "content": "Data visualization is a crucial part of modern web applications. This post delves into the power of D3.js for creating stunning and interactive data visualizations. D3, which stands for Data-Driven Documents, is a JavaScript library for producing dynamic, interactive data visualizations in web browsers. This blog post will take you through the fundamental concepts of D3.js, from data binding to creating scalable vector graphics.\n\nWe'll cover a variety of visualizations, such as bar charts, line graphs, and pie charts, and explore how to make them interactive and dynamic.\n\n![React Logo](./../../../public/images/blogpic.png)\n\nAdditionally, we'll discuss techniques for handling different types of data and learn about responsive design in data visualization. By the end of this post, you'll have a solid understanding of how to leverage D3.js to create powerful and visually compelling data representations for your web applications.",
+    "img": "./../../../public/images/blogpic.png"
   }
 ]

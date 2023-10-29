@@ -3,18 +3,19 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 
 import styles from "./BlogPostCard.module.scss";
-import img from "./../../../public/images/blogpic.png";
 
 interface BlogPostCardProps {
   title: string;
   date: string;
   content: string;
+  img: string;
 }
 
 export const BlogPostCard: React.FC<BlogPostCardProps> = ({
   title,
   date,
   content,
+  img,
 }) => {
   return (
     <div className={styles.blogPostCardContainer}>

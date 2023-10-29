@@ -4,6 +4,7 @@ interface dataProps {
   title: string;
   date: string;
   content: string;
+  img: string;
 }
 
 interface RenderBoxProps {
@@ -22,6 +23,7 @@ export const RenderBox: React.FC<RenderBoxProps> = ({ data, limit }) => {
             title={dat.title}
             date={dat.date}
             content={dat.content}
+            img={dat.img}
           />
         );
       })}
