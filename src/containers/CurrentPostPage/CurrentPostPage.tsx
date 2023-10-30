@@ -11,6 +11,7 @@ import { Button } from "../../components/Button";
 
 import { faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./CurrentPostPage.module.scss";
+import { SideProfil } from "../../components/SideProfil";
 
 export const CurrentPostPage = () => {
   const { name } = useParams();
@@ -33,6 +34,7 @@ export const CurrentPostPage = () => {
     <div className={styles.currentPostPageContainer}>
       <HeaderMenu />
       <Section>
+        <SideProfil />
         <Article>
           <h2>{post.title}</h2>
           <Markdown>{post.content}</Markdown>
