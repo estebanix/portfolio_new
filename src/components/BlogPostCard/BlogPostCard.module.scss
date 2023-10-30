@@ -13,6 +13,10 @@
   color: #00b7c6;
   text-decoration: underline;
   cursor: pointer;
+
+  &:hover {
+    color: #008a99;
+  }
 }
 
 .blogPostCardContainer p {
@@ -29,7 +33,7 @@
   text-overflow: ellipsis;
 }
 
-.blogPostCardContainer img{
-    width: 300px;
-    height: auto;
-  }
+.blogPostCardContainer img {
+  width: 300px;
+  height: auto;
+}

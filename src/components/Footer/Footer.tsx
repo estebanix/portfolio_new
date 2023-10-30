@@ -1,8 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faSquareXTwitter, faResearchgate } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faSquareXTwitter,
+  faResearchgate,
+} from "@fortawesome/free-brands-svg-icons";
 
 import styles from "./Footer.module.scss";
-
 
 export const Footer = () => {
   return (
@@ -24,10 +27,15 @@ export const Footer = () => {
             TWITTER
           </li>
         </a>
-        <li className="nav-li">
-          <FontAwesomeIcon style={{ color: "#79E9D3" }} icon={faResearchgate} />{" "}
-          RESEARCH GATE
-        </li>
+        <a href="https://www.researchgate.net/profile/Samuel-Kertes">
+          <li className="nav-li">
+            <FontAwesomeIcon
+              style={{ color: "#79E9D3" }}
+              icon={faResearchgate}
+            />{" "}
+            RESEARCH GATE
+          </li>
+        </a>
       </ul>
     </footer>
   );
