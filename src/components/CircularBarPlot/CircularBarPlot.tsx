@@ -84,7 +84,7 @@ export const CircularBarplot = ({
   });
 
   return (
-    <div>
+    <div className={styles.circularBarPlotContainer}>
       <svg width={width} height={height}>
         <g transform={"translate(" + width / 2 + "," + height / 2 + ")"}>
           {allShapes}

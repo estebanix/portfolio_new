@@ -8,10 +8,12 @@ import { Article } from "../../components/Article";
 import Markdown from "react-markdown";
 import { BoxRow } from "../../components/BoxRow";
 import { Button } from "../../components/Button";
+import { RenderBox } from "../../components/RenderBox";
+import { SideProfil } from "../../components/SideProfil";
 
 import { faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./CurrentPostPage.module.scss";
-import { SideProfil } from "../../components/SideProfil";
+import blogData from "./../../data/blogData.json";
 
 export const CurrentPostPage = () => {
   const { name } = useParams();
@@ -50,6 +52,7 @@ export const CurrentPostPage = () => {
               shareUrl={linkedinShareUrl}
             />
           </BoxRow>
+          <RenderBox data={blogData} limit={2} row={true} />
         </Article>
       </Section>
       <Footer />
