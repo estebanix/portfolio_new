@@ -13,7 +13,7 @@ interface RenderBoxProps {
   data?: dataProps[];
   limit: number;
   row?: boolean;
-  curr: string;
+  curr?: string;
 }
 
 export const RenderBox: React.FC<RenderBoxProps> = ({
@@ -22,7 +22,6 @@ export const RenderBox: React.FC<RenderBoxProps> = ({
   row,
   curr,
 }) => {
-  // Filter out the current blog post from the data
   const filteredData = data?.filter((post) => post.title !== curr) || [];
 
   const limitedData = filteredData.slice(0, limit);

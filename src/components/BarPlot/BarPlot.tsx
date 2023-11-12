@@ -13,11 +13,9 @@ type BarplotProps = {
 };
 
 export const BarPlot = ({ width, height, data }: BarplotProps) => {
-  // bounds = area inside the graph axis = calculated by subtracting the margins
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
-  // X axis is for groups since the barplot is vertical
   const groups = data.map((d) => d.name);
   const xScale = useMemo(() => {
     return d3
@@ -25,24 +23,21 @@ export const BarPlot = ({ width, height, data }: BarplotProps) => {
       .domain(groups)
       .range([0, boundsWidth])
       .padding(BAR_PADDING)
-      .paddingOuter(0.2); // Add some outer padding to separate bars from the axis
+      .paddingOuter(0.2);
   }, [data, width]);
 
-  // Y axis
   const yScale = useMemo(() => {
-    const [min, max] = d3.extent(data.map((d) => d.value));
+    const [,max] = d3.extent(data.map((d) => d.value));
     return d3
       .scaleLinear()
       .domain([0, max || 10])
       .range([boundsHeight, 0]);
   }, [data, height]);
 
-  // Color scale
   const colorScale = useMemo(() => {
-    return d3.scaleOrdinal().domain(groups).range(d3.schemeCategory10);
+    return d3.scaleOrdinal<string>().domain(groups).range(d3.schemeCategory10);
   }, [groups]);
 
-  // Build the shapes
   const allShapes = data.map((d, i) => {
     const x = xScale(d.name);
     if (x === undefined) {
@@ -69,7 +64,7 @@ export const BarPlot = ({ width, height, data }: BarplotProps) => {
           textAnchor="middle"
           alignmentBaseline="baseline"
           fontSize={12}
-          opacity={boundsHeight - yScale(d.value) > 20 ? 1 : 0} // hide label if bar is not tall enough
+          opacity={boundsHeight - yScale(d.value) > 20 ? 1 : 0}
         >
           {d.value}
         </text>

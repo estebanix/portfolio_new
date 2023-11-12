@@ -8,12 +8,12 @@ import photo from "./../../../public/images/photo.jpg"
 export const HeaderMenu = () => {
   return (
     <div className={styles.headerMenuContainer}>
-      <Image src={photo} />
+      <Image src={photo} radius={true} />
       <div className={styles.headerMenuItemBox}>
         {headerMenuItems.map((item, index) => {
           return (
-            <Link to={item.to} className={styles.headerMenuLink}>
-              <p key={index}>{item.title}</p>
+            <Link key={index} to={item.to} className={styles.headerMenuLink}>
+              <p>{item.title}</p>
             </Link>
           );
         })}

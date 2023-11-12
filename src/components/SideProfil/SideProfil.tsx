@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { Image } from "../Image";
 
 import styles from "./SideProfil.module.scss";
+import photo from "./../../../public/images/photo.jpg";
 
 export const SideProfil = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -25,7 +27,7 @@ export const SideProfil = () => {
       className={styles.sideProfilContainer}
       style={{ top: scrollPosition <= 50 ? "10%" : "0" }}
     >
-      <img src="./../../../public/images/photo.jpg" />
+      <Image src={photo} radius={true} />
       <h2>Samuel Kertés</h2>
       <p>Dovi Dopi Do</p>
       <ul>

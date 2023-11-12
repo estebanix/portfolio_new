@@ -2,10 +2,10 @@ import { HeaderMenu } from "../../components/HeaderMenu";
 import { Section } from "../../components/Section";
 import { Article } from "../../components/Article";
 import { Footer } from "../../components/Footer";
-import { BarPlot } from "../../components/BoxPlot";
+import { BarPlot } from "../../components/BarPlot";
 
 import styles from "./AboutPage.module.scss";
-import { data } from "./../../components/BoxPlot/data";
+import { data } from "../../components/BarPlot/data";
 
 export const AboutPage = () => {
   return (

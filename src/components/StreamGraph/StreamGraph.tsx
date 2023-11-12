@@ -13,14 +13,11 @@ type StreamGraphProps = {
 };
 
 export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
-  // bounds = area inside the graph axis = calculated by substracting the margins
   const boundsWidth = width - MARGIN.right - MARGIN.left;
   const boundsHeight = height - MARGIN.top - MARGIN.bottom;
 
-  //
   const groups = ["school", "work", "bodybuilding", "programming", "freetime"];
 
-  // Data Wrangling: stack the data
   const stackSeries = d3
     .stack()
     .keys(groups)
@@ -28,12 +25,10 @@ export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
     .offset(d3.stackOffsetSilhouette);
   const series = stackSeries(data);
 
-  // Y axis
   const yScale = useMemo(() => {
     return d3.scaleLinear().domain([-100, 100]).range([boundsHeight, 0]);
   }, [boundsHeight]);
 
-  // X axis
   const [xMin, xMax] = d3.extent(data, (d) => d.year);
   const xScale = useMemo(() => {
     return d3
@@ -42,14 +37,13 @@ export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
       .range([0, boundsWidth]);
   }, [boundsWidth, xMax, xMin]);
 
-  // Color
   const colorScale = d3
     .scaleOrdinal<string>()
     .domain(groups)
     .range(["#EF476F", "#FFD166", "#06D6A0", "#118AB2", "#073B4C"]);
 
-  // Build the shapes
   const areaBuilder = d3
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     .area<any>()
     .x((d) => {
       return xScale(d.data.year);
@@ -59,7 +53,7 @@ export const StreamGraph = ({ width, height, data }: StreamGraphProps) => {
     .curve(curveCatmullRom);
 
   const allPath = series.map((serie, i) => {
-    const path = areaBuilder(serie);
+    const path = areaBuilder(serie) || "";
     return (
       <path
         key={i}
