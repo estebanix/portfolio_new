@@ -52,7 +52,7 @@ export const CurrentPostPage = () => {
               shareUrl={linkedinShareUrl}
             />
           </BoxRow>
-          <RenderBox data={blogData} limit={2} row={true} />
+          <RenderBox curr={post.title} data={blogData} limit={2} row={true} />
         </Article>
       </Section>
       <Footer />
