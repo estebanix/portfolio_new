@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -5,8 +6,25 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import styles from "./SideProfil.module.scss";
 
 export const SideProfil = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className={styles.sideProfilContainer}>
+    <div
+      className={styles.sideProfilContainer}
+      style={{ top: scrollPosition <= 50 ? "10%" : "0" }}
+    >
       <img src="./../../../public/images/photo.jpg" />
       <h2>Samuel Kertés</h2>
       <p>Dovi Dopi Do</p>
