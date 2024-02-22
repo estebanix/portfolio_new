@@ -27,7 +27,7 @@ export const BlogPostCard: React.FC<BlogPostCardProps> = ({
         <FontAwesomeIcon icon={faClock} /> {date}
       </p>
       <h4>{content}</h4>
-      <Image src={img} />
+      <Image src={`/images/${img}`} />
     </div>
   );
 };
