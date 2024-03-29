@@ -9,7 +9,7 @@ import Markdown from "react-markdown";
 import { BoxRow } from "../../components/BoxRow";
 import { Button } from "../../components/Button";
 import { RenderBox } from "../../components/RenderBox";
-import { SideProfil } from "../../components/SideProfil";
+//import { SideProfil } from "../../components/SideProfil";
 
 import { faLinkedin, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./CurrentPostPage.module.scss";
@@ -36,8 +36,8 @@ export const CurrentPostPage = () => {
     <div className={styles.currentPostPageContainer}>
       <HeaderMenu />
       <Section>
-        <SideProfil />
-        <Article>
+        {/* <SideProfil />  saving it for responsivness bigger screen*/}
+        <Article bigger = {true}>
           <h2>{post.title}</h2>
           <Markdown>{post.content}</Markdown>
           <BoxRow gapWidth={20}>
@@ -52,7 +52,7 @@ export const CurrentPostPage = () => {
               shareUrl={linkedinShareUrl}
             />
           </BoxRow>
-          <RenderBox curr={post.title} data={blogData} limit={2} row={true} />
+          <RenderBox curr={post.title} data={blogData} limit={2} row={false} />
         </Article>
       </Section>
       <Footer />

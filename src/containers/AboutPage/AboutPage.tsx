@@ -1,18 +1,46 @@
+import { useState, useEffect } from "react";
 import { HeaderMenu } from "../../components/HeaderMenu";
 import { Section } from "../../components/Section";
 import { Article } from "../../components/Article";
 import { Footer } from "../../components/Footer";
 import { BarPlot } from "../../components/BarPlot";
-
-import styles from "./AboutPage.module.scss";
 import { data } from "../../components/BarPlot/data";
+import styles from "./AboutPage.module.scss";
 
 export const AboutPage = () => {
+  const [plotWidth, setPlotWidth] = useState(360);
+  const [plotHeight, setPlotHeight] = useState(280);
+
+  useEffect(() => {
+    const calculateSize = () => {
+      const screenWidth = window.innerWidth;
+      let width, height;
+    
+      if (screenWidth <= 576) {
+        width = Math.min(screenWidth - 20, 360);
+        height = width * 0.778;
+      } else if (screenWidth <= 991) {
+        width = Math.min(screenWidth * 0.8, 660);
+        height = width * 0.778;
+      } else {
+        width = Math.min(screenWidth * 0.6, 720);
+        height = width * 0.778;
+      }
+    
+      setPlotWidth(width);
+      setPlotHeight(height);
+    };
+
+    calculateSize(); // Call the function immediately
+    window.addEventListener("resize", calculateSize); // Add event listener for resize
+    return () => window.removeEventListener("resize", calculateSize); // Remove event listener on cleanup
+  }, []);
+
   return (
     <div className={styles.aboutPageContainer}>
       <HeaderMenu />
       <Section>
-        <Article>
+        <Article bigger={true}>
           <h2>About Me</h2>
           <p>
             Greetings! I am a bioarchaeology graduate student at Charles
@@ -21,19 +49,7 @@ export const AboutPage = () => {
             passionate about unraveling historical mysteries and revealing
             narratives concealed within ancient remnants.
           </p>
-
-          <p>
-            My academic journey is centered around the profound study of stable
-            isotopes, serving as a valuable tool in my exploration of
-            archaeological contexts. In the captivating intersection of
-            archaeology and technology, I am keen on integrating programming
-            into my bioarchaeological research. This includes not only enhancing
-            laboratory techniques but also delving into the realm of data
-            science in archaeology — from data processing to advanced
-            visualization methods.
-          </p>
-
-          <BarPlot data={data} width={800} height={400} />
+          <BarPlot data={data} width={plotWidth} height={plotHeight} />
           <p>
             With a solid foundation in laboratory work, I've honed my skills in
             sample collection, processing, and analysis. My academic pursuits
@@ -41,14 +57,12 @@ export const AboutPage = () => {
             expeditions, applying theoretical knowledge to real-world excavation
             scenarios.
           </p>
-
           <p>
             What sets me apart is my dual fervor for both archaeology and
             programming. I find joy in exploring innovative ways to present and
             understand complex archaeological information, utilizing data
             visualization techniques to their fullest potential.
           </p>
-
           <p>
             As a dedicated bioarchaeology student, I am increasingly drawn to
             the evolving landscape of technology and its role in archaeological
@@ -58,7 +72,6 @@ export const AboutPage = () => {
             seeking new ways to uncover ancient stories and interpret historical
             data more comprehensively.
           </p>
-
           <p>
             In essence, I am a bioarchaeologist with a profound interest in
             stable isotopes analysis and a growing passion for data science in

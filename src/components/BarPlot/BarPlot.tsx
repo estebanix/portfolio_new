@@ -64,16 +64,20 @@ export const BarPlot = ({ width, height, data }: BarplotProps) => {
           textAnchor="middle"
           alignmentBaseline="baseline"
           fontSize={12}
-          opacity={boundsHeight - yScale(d.value) > 20 ? 1 : 0}
+          opacity={0.8}
+          fill="#808080"
         >
           {d.value}
         </text>
         <text
           x={x + xScale.bandwidth() / 2}
-          y={boundsHeight + 10}
+          y={boundsHeight }
           textAnchor="middle"
-          alignmentBaseline="hanging"
+          alignmentBaseline="ideographic"
           fontSize={12}
+          transform={`rotate(-45, ${x + xScale.bandwidth()}, ${boundsHeight})`}
+          fill="#808080"
+          opacity={1}
         >
           {d.name}
         </text>
@@ -100,7 +104,7 @@ export const BarPlot = ({ width, height, data }: BarplotProps) => {
           textAnchor="end"
           alignmentBaseline="middle"
           fontSize={9}
-          stroke="#808080"
+          fill="#808080"
           opacity={0.8}
         >
           {value}

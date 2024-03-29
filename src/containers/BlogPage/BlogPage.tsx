@@ -13,7 +13,7 @@ export const BlogPage = () => {
     <div className={styles.blogPageContainer}>
       <HeaderMenu />
       <Section>
-        <Article>
+        <Article bigger = {true}>
           <h2>Blog</h2>
           <RenderBox limit={4} data={blogData} />
         </Article>

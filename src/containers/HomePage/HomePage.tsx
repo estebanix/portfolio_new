@@ -16,7 +16,7 @@ export const HomePage = () => {
     <div className={styles.homePageContainer}>
       <HeaderMenu />
       <Section>
-        <TextBar title="Who am I?" text="I'm an passionate bioarchaeologist, React developer and data visualization enthusiast." />
+        <TextBar title="Who am I?" text="I'm an passionate bioarchaeologist, programmer and data visualization enthusiast. Currently I mostly work with TypeScript, React, Python and R." />
         {data ? (
           <StreamGraph data={data} width={920} height={460} />
         ) : (

@@ -1,5 +1,5 @@
 .blogPostCardContainer {
-  width: 60%;
+  width: 100%;
   min-height: 340px;
   display: flex;
   flex-direction: column;
@@ -34,6 +34,6 @@
 }
 
 .blogPostCardContainer img {
-  width: 300px;
+  width: 100%;
   height: auto;
 }

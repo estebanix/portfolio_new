@@ -1,10 +1,12 @@
 .footer {
   width: 100%;
-  height: 140px;
+  height: auto;
+  min-height: 140px;
   background-color: #f2f3f3;
   padding: 20px 10%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   font-size: 1.1em;
   font-weight: 700;
@@ -13,9 +15,11 @@
 
 .footer p {
   font-size: 1em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .footer ul {
   display: flex;
+  flex-direction: column;
   gap: 26px;
 }
