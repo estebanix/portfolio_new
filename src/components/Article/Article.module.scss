@@ -19,3 +19,9 @@ p {
   line-height: 32px;
   font-weight: 400;
 }
+
+@media (min-width: 1200px) {
+  .articleContainer {
+    padding: 50px 10%;
+  }
+}

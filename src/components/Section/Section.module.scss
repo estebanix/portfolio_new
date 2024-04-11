@@ -7,3 +7,9 @@
     align-items: center;
     position: relative;
 }
+
+@media (min-width: 1200px) {
+    .sectionContainer {
+      width: 80%;
+    }
+  }
